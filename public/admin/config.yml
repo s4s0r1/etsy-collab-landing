@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "home"
+        label: "Homepage"
+        file: "src/data/home.json"
+        format: "json"
+        fields:
+          - { label: "Brand", name: "brand", widget: "string" }
+
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subheadline", name: "subheadline", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "text" }
+              - { label: "Primary CTA Text", name: "primaryCtaText", widget: "string" }
+              - { label: "Primary CTA Link", name: "primaryCtaLink", widget: "string" }
+              - { label: "Secondary CTA Text", name: "secondaryCtaText", widget: "string" }
+              - { label: "Secondary CTA Link", name: "secondaryCtaLink", widget: "string" }
+
+          - label: "Sections"
+            name: "sections"
+            widget: "object"
+            fields:
+              - { label: "Who We Are Title", name: "whoWeAreTitle", widget: "string" }
+              - { label: "Who We Are Desc", name: "whoWeAreDesc", widget: "text" }
+
+              - { label: "What is Title", name: "whatIsTitle", widget: "string" }
+              - { label: "What is Card Title", name: "whatIsCardTitle", widget: "string" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+
+              - { label: "Presence Title", name: "presenceTitle", widget: "string" }
+              - { label: "Presence Desc", name: "presenceDesc", widget: "text" }
+              - label: "Presence Cards"
+                name: "presenceCards"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Desc", name: "desc", widget: "text" }
+
+              - { label: "Strength Title", name: "strengthTitle", widget: "string" }
+              - label: "Strength Cards"
+                name: "strengthCards"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Desc", name: "desc", widget: "text" }
+
+              - { label: "Business Target Title", name: "businessTargetTitle", widget: "string" }
+              - { label: "Business Target Desc", name: "businessTargetDesc", widget: "text" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "CTA Title", name: "ctaTitle", widget: "string" }
+              - { label: "Primary Action Text", name: "primaryActionText", widget: "string" }
+              - { label: "Primary Action Link", name: "primaryActionLink", widget: "string" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+              - { label: "WhatsApp Link", name: "whatsappLink", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Footer Tagline", name: "footerTagline", widget: "text" }

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Content Manager</title>
+    <base href="/admin/" />
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline>
+      if (!window.location.pathname.endsWith("/")) {
+        window.location.replace(
+          window.location.pathname + "/" + window.location.search + window.location.hash,
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

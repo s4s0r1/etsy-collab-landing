@@ -1,0 +1,358 @@
+---
+import home from "../data/home.json";
+import "../styles/global.css";
+
+const { contact } = home;
+const primaryActionText = contact.primaryActionText ?? "Start Your Partnership";
+const primaryActionLink = contact.primaryActionLink ?? "/contact";
+const phone = contact.phone ?? "+62 859-2192-4433";
+const footerTagline = contact.footerTagline ?? "Connecting your product to the US & Europe with Etsy.";
+
+const responsibilities = [
+  { title: "Opening Etsy online store", storeOwner: true, productOwner: false },
+  { title: "Managing product listings", storeOwner: true, productOwner: false },
+  { title: "Managing promotions & Etsy ads", storeOwner: true, productOwner: false },
+  { title: "Providing bank account for receiving funds", storeOwner: true, productOwner: false },
+  { title: "Managing payments to Etsy and Product Owner", storeOwner: true, productOwner: false },
+  { title: "Providing Laptop/PC & ISP", storeOwner: true, productOwner: false },
+  { title: "Etsy Fee", storeOwner: true, productOwner: false },
+  { title: "Etsy Price", storeOwner: true, productOwner: false },
+  { title: "Product Description", storeOwner: false, productOwner: true },
+  { title: "Photo Product", storeOwner: false, productOwner: true },
+  { title: "Title, Keyword & Tags", storeOwner: true, productOwner: true },
+  { title: "Quality Product", storeOwner: false, productOwner: true },
+  { title: "Packing Product", storeOwner: false, productOwner: true },
+  { title: "Shipping Product", storeOwner: false, productOwner: true },
+];
+
+const roleCards = [
+  {
+    title: "Store Owner (Etsy Collab)",
+    desc: "Handles all technical and business operations",
+    summary:
+      "8 Responsibilities: Store setup, listings, promotions, payments, hardware, fees, pricing, SEO optimization",
+    iconBg: "bg-emerald-500",
+    cardBg: "bg-[#e8f6ef]",
+  },
+  {
+    title: "Product Owner",
+    desc: "Focuses on product quality and fulfillment",
+    summary:
+      "6 Responsibilities: Product descriptions, photos, quality control, packing, shipping, SEO collaboration",
+    iconBg: "bg-blue-500",
+    cardBg: "bg-[#edf2ff]",
+  },
+];
+---
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technical | {home.brand}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="home" class="bg-white text-slate-900 antialiased [font-family:'Nunito_Sans',sans-serif]">
+    <header class="sticky top-0 z-50 border-b border-slate-200/95 bg-white/95 shadow-[0_4px_18px_rgba(15,23,42,0.12)] backdrop-blur-sm">
+      <div class="mx-auto flex w-full max-w-[1200px] items-center px-4 py-3 md:px-6">
+        <a href="/" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-orange-500 text-white">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+              <path d="M8 5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V6h2.5A2.5 2.5 0 0 1 21 8.5v2H3v-2A2.5 2.5 0 0 1 5.5 6H8v-.5Zm2 0V6h4v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM3 12.5h18v3A2.5 2.5 0 0 1 18.5 18h-13A2.5 2.5 0 0 1 3 15.5v-3Z" />
+            </svg>
+          </span>
+          <span class="text-[1.2rem] font-extrabold tracking-tight text-orange-500 md:text-[1.35rem]">{home.brand}</span>
+        </a>
+
+        <div class="ml-auto flex items-center gap-4 md:gap-6">
+          <details class="relative z-50 md:hidden">
+            <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md border-2 border-orange-500 text-orange-500 transition hover:bg-orange-50 [&::-webkit-details-marker]:hidden">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </summary>
+
+            <div class="absolute right-0 top-full mt-2 w-[240px] rounded-md border border-slate-200 bg-white p-3 shadow-[0_10px_20px_rgba(15,23,42,0.12)]">
+              <nav class="space-y-1 text-[13px] font-bold text-slate-700">
+                <a href="/" class="flex items-center gap-2 rounded-md px-2 py-2 transition hover:bg-slate-100/90 hover:text-orange-500">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 text-slate-500" aria-hidden="true">
+                    <path d="m3 10.5 9-7 9 7V21h-6v-6h-6v6H3V10.5Z" />
+                  </svg>
+                  Home
+                </a>
+                <a href="/about" class="flex items-center gap-2 rounded-md px-2 py-2 transition hover:bg-slate-100/90 hover:text-orange-500">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 text-slate-500" aria-hidden="true">
+                    <path d="M16 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                    <path d="M2 21v-1a6 6 0 0 1 6-6h1M13 21v-1a6 6 0 0 1 6-6h1" />
+                  </svg>
+                  About Us
+                </a>
+                <a href="/how" class="flex items-center gap-2 rounded-md px-2 py-2 transition hover:bg-slate-100/90 hover:text-orange-500">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 text-slate-500" aria-hidden="true">
+                    <path d="m5 19 6-6m-4 8 8-8m-1-8h6v6m-4 0 4-4" />
+                  </svg>
+                  How We Work
+                </a>
+                <a href="/technical" class="flex items-center gap-2 rounded-md px-2 py-2 transition hover:bg-slate-100/90 hover:text-orange-500">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5 text-slate-500" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="12" rx="2" />
+                    <path d="M8 20h8M12 16v4" />
+                  </svg>
+                  Technical
+                </a>
+              </nav>
+
+              <a href="/contact" class="mt-2 inline-flex w-full items-center gap-1.5 rounded-md bg-orange-500 px-3 py-2 text-[13px] font-extrabold text-white">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5 shrink-0" aria-hidden="true">
+                  <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.2.25L12 11.2 18.8 7H5.2Z" />
+                </svg>
+                Contact Us
+              </a>
+            </div>
+          </details>
+
+          <nav class="hidden items-center gap-5 text-[13px] font-extrabold text-slate-700 md:flex">
+            <a
+              href="/"
+              class="group inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 leading-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100/90 hover:text-orange-500 hover:shadow-[0_8px_16px_rgba(15,23,42,0.08)]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 shrink-0 text-slate-500 transition-colors duration-200 group-hover:text-orange-500" aria-hidden="true">
+                <path d="m3 10.5 9-7 9 7V21h-6v-6h-6v6H3V10.5Z" />
+              </svg>
+              Home
+            </a>
+            <a
+              href="/about"
+              class="group inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 leading-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100/90 hover:text-orange-500 hover:shadow-[0_8px_16px_rgba(15,23,42,0.08)]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 shrink-0 text-slate-500 transition-colors duration-200 group-hover:text-orange-500" aria-hidden="true">
+                <path d="M16 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                <path d="M2 21v-1a6 6 0 0 1 6-6h1M13 21v-1a6 6 0 0 1 6-6h1" />
+              </svg>
+              About Us
+            </a>
+            <a
+              href="/how"
+              class="group inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 leading-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100/90 hover:text-orange-500 hover:shadow-[0_8px_16px_rgba(15,23,42,0.08)]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 shrink-0 text-slate-500 transition-colors duration-200 group-hover:text-orange-500" aria-hidden="true">
+                <path d="m5 19 6-6m-4 8 8-8m-1-8h6v6m-4 0 4-4" />
+              </svg>
+              How We Work
+            </a>
+            <a
+              href="/technical"
+              class="group inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-lg bg-slate-100 px-2.5 leading-none text-orange-500 shadow-[0_8px_16px_rgba(15,23,42,0.08)]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 shrink-0 text-orange-500" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="12" rx="2" />
+                <path d="M8 20h8M12 16v4" />
+              </svg>
+              Technical
+            </a>
+          </nav>
+
+          <a
+            href="/contact"
+            class="hidden h-10 items-center gap-1.5 whitespace-nowrap rounded-md bg-orange-500 px-4 text-[13px] font-extrabold text-white shadow-[0_8px_18px_rgba(249,115,22,0.4)] transition hover:bg-orange-600 md:inline-flex"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 shrink-0" aria-hidden="true">
+              <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.2.25L12 11.2 18.8 7H5.2Z" />
+            </svg>
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative isolate overflow-hidden">
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="background-image: url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2200&q=80');"
+        ></div>
+        <div class="absolute inset-0 bg-white/72"></div>
+        <div class="relative mx-auto flex min-h-[300px] w-full max-w-[1200px] flex-col items-center justify-center px-4 py-14 text-center md:px-6">
+          <h1 class="text-4xl font-black leading-tight text-[#12223a] sm:text-5xl md:text-[64px]">
+            <span class="text-orange-500">Technical</span> Implementation
+          </h1>
+          <p class="mt-4 max-w-[820px] text-[1.12rem] font-medium text-slate-700 md:text-[1.85rem]">
+            Our technical infrastructure and responsibility distribution
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-[#f7f8fc] py-20 md:py-24">
+        <div class="mx-auto max-w-[1180px] px-4 md:px-6">
+          <h2 class="text-center text-3xl font-black text-[#13243c] md:text-[2.4rem]">Responsibilities Distribution</h2>
+
+          <div class="mt-10 overflow-x-auto rounded-2xl bg-white shadow-[0_10px_24px_rgba(15,23,42,0.1)]">
+            <div class="min-w-[860px]">
+              <div class="grid grid-cols-[1.7fr_0.8fr_0.8fr] gap-4 bg-orange-500 px-6 py-5 text-sm font-extrabold text-white md:text-[1.35rem]">
+                <div>Responsibilities</div>
+                <div class="text-center">Store Owner</div>
+                <div class="text-center">Product Owner</div>
+              </div>
+
+              <div class="divide-y divide-slate-200">
+                {responsibilities.map((item) => (
+                  <div class="grid grid-cols-[1.7fr_0.8fr_0.8fr] items-center gap-4 px-6 py-4 text-slate-700">
+                    <div class="text-[0.93rem] font-semibold md:text-[1.2rem]">{item.title}</div>
+
+                    <div class="flex justify-center">
+                      {item.storeOwner ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-xs font-extrabold text-emerald-700 md:text-sm">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="h-3 w-3 md:h-3.5 md:w-3.5" aria-hidden="true">
+                            <path d="m5 13 4 4L19 7" />
+                          </svg>
+                          Yes
+                        </span>
+                      ) : (
+                        <span class="text-slate-400">-</span>
+                      )}
+                    </div>
+
+                    <div class="flex justify-center">
+                      {item.productOwner ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1 text-xs font-extrabold text-blue-700 md:text-sm">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="h-3 w-3 md:h-3.5 md:w-3.5" aria-hidden="true">
+                            <path d="m5 13 4 4L19 7" />
+                          </svg>
+                          Yes
+                        </span>
+                      ) : (
+                        <span class="text-slate-400">-</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-9 grid gap-6 md:grid-cols-2">
+            {roleCards.map((card, index) => (
+              <article class:list={[card.cardBg, "rounded-2xl px-6 py-7 shadow-[0_10px_22px_rgba(15,23,42,0.08)]"]}>
+                <div class="flex items-center gap-3">
+                  <span class:list={[card.iconBg, "inline-flex h-10 w-10 items-center justify-center rounded-md text-white"]}>
+                    {index === 0 ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+                        <path d="M8 5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V6h2.5A2.5 2.5 0 0 1 21 8.5v2H3v-2A2.5 2.5 0 0 1 5.5 6H8v-.5Zm2 0V6h4v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM3 12.5h18v3A2.5 2.5 0 0 1 18.5 18h-13A2.5 2.5 0 0 1 3 15.5v-3Z" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+                        <path d="M12 3a4 4 0 0 0-4 4v.8a3 3 0 0 0-2 2.8v6.9A2.5 2.5 0 0 0 8.5 20h7a2.5 2.5 0 0 0 2.5-2.5v-6.9a3 3 0 0 0-2-2.8V7a4 4 0 0 0-4-4Zm0 2a2 2 0 0 1 2 2v.5h-4V7a2 2 0 0 1 2-2Z" />
+                      </svg>
+                    )}
+                  </span>
+                  <h3 class="text-xl font-extrabold text-[#1a2e48] md:text-[1.55rem]">{card.title}</h3>
+                </div>
+
+                <p class="mt-5 text-sm leading-relaxed text-slate-600 md:text-[1rem]">{card.desc}</p>
+                <p class="mt-4 text-sm leading-relaxed text-slate-600 md:text-[0.96rem]">
+                  <span class="font-extrabold text-[#1a2e48]">{card.summary.split(":")[0]}:</span>
+                  {card.summary.split(":")[1]}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-gradient-to-r from-[#ff8b00] to-[#f26a00] py-16 md:py-20">
+        <div class="mx-auto max-w-[1100px] px-4 text-center text-white md:px-6">
+          <h2 class="text-3xl font-black md:text-[2.4rem]">{contact.ctaTitle}</h2>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={primaryActionLink}
+              class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-extrabold text-orange-500 shadow-[0_10px_25px_rgba(15,23,42,0.18)] transition hover:bg-slate-100 md:text-base"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                <path d="m2.8 12.3 16.9-7.1a.9.9 0 0 1 1.2 1.1l-3.6 14a.9.9 0 0 1-1.6.3l-3.1-4-4.4 3a.9.9 0 0 1-1.4-.8l.3-4.6-3.8-1a.9.9 0 0 1-.5-1.5Zm4.9 1.1 7.5-5.9-6.4 7 .1 2.3 1.9-1.3 4 5 2.9-11.5-10 4.2Z" />
+              </svg>
+              {primaryActionText}
+            </a>
+            <a
+              href={contact.whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 rounded-full border-2 border-white px-7 py-3.5 text-sm font-bold text-white transition hover:bg-white/10 md:text-base"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                <path d="M20.6 12a8.6 8.6 0 0 1-12.7 7.6L3 20.8l1.3-4.8A8.6 8.6 0 1 1 20.6 12Zm-8.6-7a7 7 0 0 0-6.1 10.3l.3.5-.8 2.9 2.9-.7.5.3a7 7 0 1 0 3.2-13.3Zm3.9 9.2c-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.5.1l-.4.6c-.1.2-.2.2-.4.1a5.8 5.8 0 0 1-2.8-2.4c-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3.1-.4l-.6-1.4c-.1-.2-.3-.2-.4-.2h-.4a.7.7 0 0 0-.5.2c-.2.2-.7.7-.7 1.7s.7 2 1 2.3a8 8 0 0 0 3.1 2.8c1.9.8 1.9.5 2.3.5s1.3-.5 1.5-.9c.2-.5.2-.9.1-1Z" />
+              </svg>
+              {contact.buttonText}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="border-t border-orange-500 bg-[#041028] text-white">
+        <div class="mx-auto grid max-w-[1320px] gap-10 px-6 py-12 md:grid-cols-[1.85fr_1fr_1.1fr] md:gap-14 md:px-14">
+          <div class="min-w-0">
+            <a href="/" class="inline-flex items-center gap-2">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-orange-500 text-white">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                  <path d="M8 5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V6h2.5A2.5 2.5 0 0 1 21 8.5v2H3v-2A2.5 2.5 0 0 1 5.5 6H8v-.5Zm2 0V6h4v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM3 12.5h18v3A2.5 2.5 0 0 1 18.5 18h-13A2.5 2.5 0 0 1 3 15.5v-3Z" />
+                </svg>
+              </span>
+              <span class="text-[1.6rem] font-extrabold tracking-tight">{home.brand}</span>
+            </a>
+            <p class="mt-4 text-xs leading-relaxed text-slate-300 md:text-[0.93rem] md:whitespace-nowrap">{footerTagline}</p>
+          </div>
+
+          <div>
+            <h3 class="text-[1rem] font-extrabold md:text-[1.35rem]">Quick Links</h3>
+            <ul class="mt-4 space-y-2.5 text-[0.9rem] text-slate-300 md:text-[0.95rem]">
+              <li><a href="/" class="transition hover:text-white">Home</a></li>
+              <li><a href="/about" class="transition hover:text-white">About Us</a></li>
+              <li><a href="/how" class="transition hover:text-white">How We Work</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-[1rem] font-extrabold md:text-[1.35rem]">Contact Info</h3>
+            <div class="mt-4 space-y-3 text-[0.9rem] text-slate-300 md:text-[0.95rem]">
+              <a href={`tel:${phone.replace(/\s+/g, "")}`} class="inline-flex items-center gap-2 transition hover:text-white">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-orange-400" aria-hidden="true">
+                  <path d="M6.6 10.8c1.6 3 3.7 5 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3 11 11 0 0 0 3.4.6 1.2 1.2 0 0 1 1.2 1.2v3.5a1.2 1.2 0 0 1-1.2 1.2C10 21.4 2.6 14 2.6 4.8A1.2 1.2 0 0 1 3.8 3.6h3.5a1.2 1.2 0 0 1 1.2 1.2 11 11 0 0 0 .6 3.4 1.2 1.2 0 0 1-.3 1.2l-2.2 2.2Z" />
+                </svg>
+                {phone}
+              </a>
+              <a href={"mailto:" + contact.email} class="inline-flex items-center gap-2 transition hover:text-white">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-orange-400" aria-hidden="true">
+                  <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.2.25L12 11.2 18.8 7H5.2Z" />
+                </svg>
+                {contact.email}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-700/80">
+          <p class="mx-auto max-w-[1200px] px-4 py-6 text-center text-xs text-slate-400 md:px-6 md:text-[0.8rem]">
+            &copy; {new Date().getFullYear()} {home.brand}. All rights reserved. {footerTagline}
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <a
+      href={contact.whatsappLink}
+      target="_blank"
+      rel="noreferrer"
+      class="fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-[0_12px_28px_rgba(16,185,129,0.45)] transition hover:bg-emerald-600"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+        <path d="M20.6 12a8.6 8.6 0 0 1-12.7 7.6L3 20.8l1.3-4.8A8.6 8.6 0 1 1 20.6 12Zm-8.6-7a7 7 0 0 0-6.1 10.3l.3.5-.8 2.9 2.9-.7.5.3a7 7 0 1 0 3.2-13.3Zm3.9 9.2c-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.5.1l-.4.6c-.1.2-.2.2-.4.1a5.8 5.8 0 0 1-2.8-2.4c-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3.1-.4l-.6-1.4c-.1-.2-.3-.2-.4-.2h-.4a.7.7 0 0 0-.5.2c-.2.2-.7.7-.7 1.7s.7 2 1 2.3a8 8 0 0 0 3.1 2.8c1.9.8 1.9.5 2.3.5s1.3-.5 1.5-.9c.2-.5.2-.9.1-1Z" />
+      </svg>
+    </a>
+  </body>
+</html>
