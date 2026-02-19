@@ -6,7 +6,7 @@
     <base href="/admin/" />
 
     <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script is:inline>
       if (!window.location.pathname.endsWith("/")) {
         window.location.replace(
@@ -17,7 +17,7 @@
   </head>
   <body>
     <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script is:inline src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
 
     <script is:inline>
       if (window.netlifyIdentity) {
