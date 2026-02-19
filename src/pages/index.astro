@@ -384,14 +384,18 @@ const footerTagline = contact.footerTagline ?? "Connecting your product to the U
     <script is:inline>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", () => {
-          const h = window.location.hash || "";
-          // kalau datang dari email invite/reset, buka widget biar muncul form set password
-          if (h.includes("invite_token") || h.includes("recovery_token") || h.includes("confirmation_token")) {
+          const hash = window.location.hash || "";
+          // kalau ada token dari email invite/recovery, buka modal identity otomatis
+          if (
+            hash.includes("invite_token=") ||
+            hash.includes("recovery_token=") ||
+            hash.includes("confirmation_token=")
+          ) {
             window.netlifyIdentity.open();
           }
         });
 
-        // setelah login/selesai set password, lempar ke CMS
+        // setelah berhasil login / set password, lempar ke Decap (/admin)
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
         });
