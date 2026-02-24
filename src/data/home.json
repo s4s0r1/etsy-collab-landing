@@ -10,35 +10,56 @@
     "secondaryCtaLink": "/about"
   },
   "sections": {
-    "whoWeAreTitle": "Who We Are",
-    "whoWeAreDesc": "We offer partnership to sell your product to Etsy with target markets in the US & Europe.",
-    "whatIsTitle": "What is Etsy?",
-    "whatIsCardTitle": "Etsy Platform",
-    "stats": [
-      { "label": "Active Buyers", "value": "90M+" },
-      { "label": "Active Sellers", "value": "5M+" },
-      { "label": "Marketplace", "value": "Global" }
-    ],
-    "presenceTitle": "Our Presence",
-    "presenceDesc": "Our presence is perfect for you who want to expand your market in the US & Europe.",
-    "presenceCards": [
-      { "title": "United States", "desc": "Primary target market with high demand for unique handmade products" },
-      { "title": "Europe", "desc": "Growing market with appreciation for artisanal craftsmanship" }
-    ],
-    "strengthTitle": "Our Strength",
+    "businessTargetDesc": "For owners of goods in who want to sell their products in the US and European markets",
     "strengthCards": [
-      { "title": "Multiple Etsy Account", "desc": "We have human resource in large quantities, so that we can create multiple Etsy Account and also bank account" },
-      { "title": "Long-term Commitment", "desc": "We will commit to working together and being honest with the product owner for the long term." }
+      {
+        "title": "Multiple Etsy Account",
+        "desc": "We have human resource in large quantities, so that we can create multiple Etsy Account and also bank account"
+      },
+      {
+        "title": "Long-term Commitment",
+        "desc": "We will commit to working together and being honest with the product owner for the long term."
+      }
     ],
     "businessTargetTitle": "Business Target",
-    "businessTargetDesc": "For owners of goods in who want to sell their products in the US and European markets"
+    "presenceCards": [
+      {
+        "title": "United States",
+        "desc": "Primary target market with high demand for unique handmade products"
+      },
+      {
+        "title": "Europe",
+        "desc": "Growing market with appreciation for artisanal craftsmanship"
+      }
+    ],
+    "whatIsTitle": "What is Etsy?",
+    "presenceDesc": "Our presence is perfect for you who want to expand your market in the US & Europe.",
+    "whoWeAreTitle": "Who We Are",
+    "strengthTitle": "Our Strength",
+    "whoWeAreDesc": "We offer partnership to sell your product to Etsy with target markets in the US & Europe.",
+    "whatIsCardTitle": "Etsy Platform",
+    "presenceTitle": "Our Presence",
+    "stats": [
+      {
+        "label": "Active Buyers",
+        "value": "90M+"
+      },
+      {
+        "label": "Active Sellers",
+        "value": "5M+"
+      },
+      {
+        "label": "Marketplace",
+        "value": "Global"
+      }
+    ]
   },
   "contact": {
     "ctaTitle": "Ready to Partnership?",
     "primaryActionText": "Start Your Partnership",
     "primaryActionLink": "/contact",
     "buttonText": "Chat on WhatsApp",
-    "whatsappLink": "https://wa.me/628xxxxxxxxxx",
+    "whatsappLink": "https://wa.me/6285921924433",
     "phone": "+62 859-2192-4433",
     "email": "admin@etsycollab.com",
     "footerTagline": "Connecting your product to the US & Europe with Etsy."
